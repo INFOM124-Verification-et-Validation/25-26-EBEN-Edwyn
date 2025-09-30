@@ -19,13 +19,15 @@ class BoardTest {
         { mock(Square.class), mock(Square.class), mock(Square.class) },
     };
     private final Board board = new Board(grid);
+    private final int maxWidth = 2;
+    private final int maxHeight = 3;
 
     /**
      * Verifies the board has the correct width.
      */
     @Test
     void verifyWidth() {
-        // TODO
+        assertThat(board.getWidth()).isEqualTo(maxWidth);
     }
 
     /**
@@ -33,7 +35,7 @@ class BoardTest {
      */
     @Test
     void verifyHeight() {
-        // TODO
+        assertThat(board.getHeight()).isEqualTo(maxHeight);
     }
 
     /**
@@ -48,6 +50,6 @@ class BoardTest {
         "0, 1"
     })
     void testSquareAt(int x, int y) {
-        // TODO
+        assertThat(board.squareAt(x, y)).isEqualTo(grid[x][y]);
     }
 }
